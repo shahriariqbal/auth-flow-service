@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/user');
 
 const mongoose = require('mongoose');
 const db = "mongodb+srv://usershahriar:passwordshahriar@users.kmmww.mongodb.net/<dbname>?retryWrites=true&w=majority" ;
@@ -16,5 +17,17 @@ router.get('/', (req, res)=>{
     res.send('From API route');
 
 })
+
+router.post('/register', (req, res) => {
+    let userData = req.body ;
+    let user = new User(userData);
+    user.save((error, registerUser) => {
+        if(error){
+            console.log(error);
+        }else{
+            res.status(200).send(registerUser);
+        }
+    });
+});
 
 module.exports = router;
