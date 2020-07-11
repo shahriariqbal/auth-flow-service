@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const jwt = require('jsonwebtoken');
 
 const mongoose = require('mongoose');
 const db = "mongodb+srv://usershahriar:passwordshahriar@users.kmmww.mongodb.net/<dbname>?retryWrites=true&w=majority" ;
@@ -25,7 +26,9 @@ router.post('/register', (req, res) => {
         if(error){
             console.log(error);
         }else{
-            res.status(200).send(registerUser);
+            let payload = { subject: registerUser._id}
+            let token = jwt.sign(payload, 'secretkey');
+            res.status(200).send({token});
         }
     });
 });
@@ -47,7 +50,9 @@ router.post('/login', (req, res) => {
                     res.status(401).send('Invalid Password');
 
                 }else{
-                    res.status(200).send(user);
+                    let payload = { subject: user._id}
+                    let token = jwt.sign(payload, 'secretkey')
+                    res.status(200).send({token});
                 }
 
             }
