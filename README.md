@@ -5,6 +5,7 @@
 
 
 # Setup Procedure 
+******** setup node and angular cli (angular cli command :  npm install -g @angular/cli ) ********
 1) Clone this repo <br/>
 2) Open command prompt in server folder <br/>
 3) Run npm install <br/>
