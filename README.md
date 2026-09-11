@@ -1,45 +1,43 @@
 # Simple Auth Flow Service
 
+A minimal authentication flow example — Angular frontend with a Node.js/Express + MongoDB backend.
 
-###### used Angular, Node, Express, MongoDB 
+## 🛠 Tech Stack
 
+Angular · Node.js · Express · MongoDB
 
-# Setup Procedure 
-******** setup node and angular cli (angular cli command :  npm install -g @angular/cli ) ********
-1) Clone this repo <br/>
-2) Open command prompt in server folder <br/>
-3) Run npm install <br/>
-4) Run node server <br/>
-5) Next, open command prompt in ngApp folder <br/>
-6) Run npm install <br/>
-7) Run ng serve -o <br/> 
+## 📁 Project Structure
 
+- `ngApp/` — Angular client
+- `server/` — Express API
 
-# Architecture
-Sequence Diagram link : https://drive.google.com/file/d/1RYj8OeBZYgcMtsXNoAjxNJvQXoiBcbrn/view?usp=sharing
+## 🚀 Setup
 
+1. Install Node.js and the Angular CLI:
 
-# About this project :- 
-➤ Used Node, Express, MongoDB, Angular, TypeScript <br/>
-➤ Used MongoDB with mLab <br/>
-➤ Created REST APIs  <br/>
-➤ Used JWT authentication <br/>
-➤ Only authenticated user can access the dashboard <br/>
+   ```bash
+   npm install -g @angular/cli
+   ```
 
+2. Install dependencies:
 
-# Used MongoDB instead of MySQL because:-
-➤ used MongoDB with mLab sothat you don't need to install the database locally <br/>
-➤ faster than MySQL <br/>
-➤ there are no restrictions on schema design <br/>
-➤ ability to handle large unstructured data <br/>
+   ```bash
+   cd server && npm install
+   cd ../ngApp && npm install
+   ```
 
- 
+3. Start the API server, then start the Angular dev server:
 
+   ```bash
+   # terminal 1
+   cd server && npm start
 
+   # terminal 2
+   cd ngApp && ng serve
+   ```
 
+> A running MongoDB instance is required — configure the connection in the server config.
 
+---
 
-
-
-
- 
+Built by [Shahriar Iqbal](https://shahriariqbal.com)
